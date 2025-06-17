@@ -11,7 +11,7 @@
     <header>
         <div class="cabec">
             <div class="h1">
-            <h1>Fernando Moura <br>
+            <h1>Fernando Moura
             </h1>
             </div>
 
@@ -23,42 +23,191 @@
     <section class="fmoura">
     <div class="fmourac">
 
-      <div class="fmouratxt">
-        <h1>Fernando Moura</h1>
-        <h3>🚩Conselho Gestor de Saúde <br>
-            🎓Administração e Gestão Pública <br>
-            🥋Voluntário na Escola Municipal de Karate <br>
-            Do Capão, pra São Paulo ficar Redondo.</h3>
+      <div class="youtube-wrapper">
+  <div id="youtube-player">
+    <p>Carregando vídeo...</p>
+  </div>
+</div>
+
+
+<script>
+  const channelId = "UCy01X12mka3I1eijdAfNJAQ"; // substitua aqui
+  const apiKey = "AIzaSyAs8hLXSw1GmISQvUXtFMVQ-GNFgXNVMsQ";       // substitua aqui
+  const fallbackVideoId = "3n9VnAWgtGI?si=3SqR6ER1WfBQiY4s"; // exibe este se não tiver live
+
+  fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${channelId}&type=video&eventType=live&key=${apiKey}`)
+    .then(response => response.json())
+    .then(data => {
+      let videoId;
+      if (data.items && data.items.length > 0) {
+        videoId = data.items[0].id.videoId; // live ao vivo encontrada
+      } else {
+        videoId = fallbackVideoId; // nenhuma live, usa vídeo fixo
+      }
+
+      const iframe = document.createElement("iframe");
+      iframe.width = "100%";
+      iframe.height = "800";
+      iframe.src = `https://www.youtube.com/embed/${videoId}`;
+      iframe.title = "YouTube player";
+      iframe.frameBorder = "0";
+      iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+      iframe.allowFullscreen = true;
+
+      const playerDiv = document.getElementById("youtube-player");
+      playerDiv.innerHTML = "";
+      playerDiv.appendChild(iframe);
+    })
+    .catch(error => {
+      console.error("Erro ao carregar vídeo:", error);
+      document.getElementById("youtube-player").innerHTML = "<p>Erro ao carregar vídeo.</p>";
+    });
+</script>
+
+
+  </div>
+</div>
+
+
+    </div>
+    </div>
+  </section>  
+
+<!-- SECTION 1 - Imagem à direita -->
+<section class="secinfo">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6 order-md-1">
+        <div class="infotxt text-white">
+          <h2>Origem</h2>
+          <p>Nasci em São Paulo, capital. Cresci rodeado por uma cidade que respira movimento, diversidade e histórias de todos os tipos — e isso com certeza influenciou minha forma de ver o mundo e me comunicar.</p>
         </div>
-    </div>
-
-    <video src="MVI_2439-VEED.mp4" autoplay></video>
-    <!--
-          <div class="fmouraimg">
-        <img src="fmoura.png" alt="Homem" />
       </div>
-
-    </div>
-  </section> 
-  
-  -->
-
-  <section class="secinfo" id="PodCast">
-    <div class="infoco">
-      <div class="infotxt">
-        <h2>PodCast</h2>
-        <p>Fernando é apresentador de um podcast no rádio comunitário,
-        dedicado a promover diálogos relevantes e construtivos.
-        Por meio de entrevistas com figuras importantes da comunidade
-        e de diferentes áreas, ele busca levar informação, conhecimento
-        e reflexão aos ouvintes. Seu trabalho tem como objetivo fortalecer
-        os laços comunitários, valorizar histórias e dar visibilidade a quem
-        contribui para o desenvolvimento social e cultural.</p>
-      </div>
-      <div class="infoimg">
+      <div class="col-md-6 order-md-2 text-end">
+        <img src="IMG_2489.JPG" alt="Podcast" class="img-fluid">
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
+<!-- SECTION 2 - Imagem à esquerda -->
+<section class="secinfo">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6 order-md-2">
+        <div class="infotxt text-white">
+          <h2>Inspirações</h2>
+          <p>Na vida pessoal, uma das minhas maiores inspirações sempre foi Barack Obama — pela forma como ele se comunica, lidera e conecta com as pessoas. Já como host de podcast, sou muito influenciado pelo Joel Jota, pelo Podpah e pelo Flow.</p>
+        </div>
+      </div>
+      <div class="col-md-6 order-md-1 text-start">
+        <img src="IMG_7334.JPG" alt="Podcast" class="img-fluid">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3 - Imagem à direita -->
+<section class="secinfo">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6 order-md-1">
+        <div class="infotxt text-white">
+          <h2>O que mais gosto</h2>
+          <p>Gosto de criar um espaço onde o convidado se sinta à vontade pra ser quem ele é de verdade. Curto quando a conversa flui de um jeito tão natural que a gente esquece que tá sendo gravado.</p>
+        </div>
+      </div>
+      <div class="col-md-6 order-md-2 text-end">
+        <img src="fpodcast.png" alt="Podcast" class="img-fluid">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4 - Imagem à esquerda -->
+<section class="secinfo">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6 order-md-2">
+        <div class="infotxt text-white">
+          <h2>Como tudo começou</h2>
+          <p>Sempre fui fã de boa conversa. Durante a pandemia, percebi o quanto a escuta e a conexão faziam falta. Foi aí que mergulhei de vez no universo dos podcasts.</p>
+        </div>
+      </div>
+      <div class="col-md-6 order-md-1 text-start">
+        <img src="karate.png" alt="Podcast" class="img-fluid">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 5 - Imagem à direita -->
+<section class="secinfo">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6 order-md-1">
+        <div class="infotxt text-white">
+          <h2>Início</h2>
+          <p>Comecei em 2020, no auge da pandemia, fazendo lives. Em 2023, fui convidado para apresentar o programa na Rádio Comunidade: “De Frente com Fernando Moura”.</p>
+        </div>
+      </div>
+      <div class="col-md-6 order-md-2 text-end">
+        <img src="IMG_2292.JPG" alt="Podcast" class="img-fluid">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 6 - Imagem à esquerda -->
+<section class="secinfo">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6 order-md-2">
+        <div class="infotxt text-white">
+          <h2>Desafios Iniciais</h2>
+          <p>No começo, tudo era desafio: parte técnica, credibilidade como apresentador, e principalmente manter a consistência mesmo sem retorno imediato. A paixão foi o combustível.</p>
+        </div>
+      </div>
+      <div class="col-md-6 order-md-1 text-start">
+        <img src="IMG_7211.JPG" alt="Podcast" class="img-fluid">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 7 - Imagem à direita -->
+<section class="secinfo">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6 order-md-1">
+        <div class="infotxt text-white">
+          <h2>Momento Marcante</h2>
+          <p>Um episódio especial foi com meu primo Lucas Moura, no episódio 100. Aquilo me marcou muito e mostrou o poder transformador do podcast.</p>
+        </div>
+      </div>
+      <div class="col-md-6 order-md-2 text-end">
+        <img src="IMG_7340.JPG" alt="Podcast" class="img-fluid">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 10 - Imagem à esquerda -->
+<section class="secinfo">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6 order-md-2">
+        <div class="infotxt text-white">
+          <h2>Futuro do Podcast</h2>
+          <p>Quero profissionalizar ainda mais, trazer nomes de peso, explorar novos formatos como episódios documentais em vídeo e criar eventos e produtos ligados à marca.</p>
+        </div>
+      </div>
+      <div class="col-md-6 order-md-1 text-start">
+        <img src="IMG_2359.JPG" alt="Podcast" class="img-fluid">
+      </div>
+    </div>
+  </div>
+</section>
 
   <footer class="text-center text-white" style="background-color: #000">
     <div class="container">
@@ -102,23 +251,17 @@
         </div>
       </section>
       <section class="text-center mb-">
-        <a href="" class="text-white me-4">
-          <i class="fab fa-facebook-f"></i>
+        <a href="https://www.facebook.com/fernandomourasp/" class="text-white me-4">
+          <i class="fab fa-facebook-f">Facebok</i>
         </a>
-        <a href="" class="text-white me-4">
-          <i class="fab fa-twitter"></i>
+        <a href="https://x.com/fmourasp" class="text-white me-4">
+          <i class="fab fa-twitter">Twitter</i>
         </a>
-        <a href="" class="text-white me-4">
-          <i class="fab fa-google"></i>
+        <a href="https://www.instagram.com/fernandomourasp/" class="text-white me-4">
+          <i class="fab fa-instagram">Instagram</i>
         </a>
-        <a href="" class="text-white me-4">
-          <i class="fab fa-instagram"></i>
-        </a>
-        <a href="" class="text-white me-4">
-          <i class="fab fa-linkedin"></i>
-        </a>
-        <a href="" class="text-white me-4">
-          <i class="fab fa-github"></i>
+        <a href="https://open.spotify.com/show/0M780kfkmmYCeipURCoxQd?si=JBmcri6vRDuDoOKf4VDYvg&nd=1&dlsi=416bf4685b1d4d2b" class="text-white me-4">
+          <i class="fab fa-spotify">Spotify</i>
         </a>
       </section>
     </div>

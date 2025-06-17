@@ -10,50 +10,55 @@ body {
   line-height: 1.2;
 }
 .cabec {
-  background-color: #1b52748c;
+  background-color: #000;
   max-width: 1200px;
   margin: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #000;
+  color: #fff;
   padding: 10px 0px;
   text-decoration: none;
 }
 header {
-    background-color: #1b5274;
+    background-color: #000;
 }
 nav a {
   margin-left: 20px;
   text-decoration: none;
   font-size: large;
-  color: #000;
+  color: #fff;
   font-weight: 500;
 }
-.fmouratxt h1 {
-  font-size: 48px;
-  color: #d3d3d3;
-  margin-bottom: 20px;
-}
-.fmouratxt h3 {
-  font-size: 24px;
-  color: #d3d3d3;
-  margin-bottom: 20px;
-}
-.fmouratxt {
-  flex: 1 1 350px;
-  min-width: 300px;
+.fmouratxt .ratio {
+  max-width: 800px;
+  margin: auto;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 .fmoura {
-  background: linear-gradient(to bottom, #0c2a3d, #000);
+  background-image: url(IMG-20250531-WA0004.jpg);
+  background-size: cover;
   padding: 60px 20px;
 }
 .fmourac {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
   gap: 40px;
+  flex-wrap: wrap;
+  min-height: 100vh;
 }
+
+@media (max-width: 768px) {
+  .fmourac {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
 .fmouraimg {
   flex: 1 1 500px;
   min-width: 250px;
@@ -72,7 +77,6 @@ html {
   scroll-behavior: smooth;
 }
 .secinfo {
-  background-image: url(fpodcast.png);
   background-color: #000;
   background-repeat: no-repeat;
   background-position: right;
@@ -91,8 +95,9 @@ html {
 }
 
 .infotxt {
-  flex: 1;
-  color: #fff;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  border-radius: 8px;
 }
 
 .infotxt h2 {
@@ -114,3 +119,18 @@ html {
   max-width: 500px;
   border-radius: 8px;
 }
+
+#youtube-player {
+  flex: 1;
+  min-width: 300px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.youtube-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
