@@ -137,3 +137,18 @@ html {
 .container a {
   text-decoration: none;
 }
+
+/* Torna o player responsivo */
+#youtube-player iframe {
+  width: 100%;
+  max-width: 800px; /* tamanho máximo em desktops */
+  height: 450px; /* altura padrão */
+}
+
+/* Ajuste para celulares */
+@media (max-width: 768px) {
+  #youtube-player iframe {
+    max-width: 100%;
+    height: 220px; /* altura menor no celular */
+  }
+}
